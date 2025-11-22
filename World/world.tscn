@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b77ougsgvlmu8"]
+
+[ext_resource type="Script" uid="uid://c4lwmbt261mgk" path="res://World/Scripts/world.gd" id="1_j8job"]
+[ext_resource type="PackedScene" uid="uid://c4np6lqim5a22" path="res://Levels/labo.tscn" id="2_k8do8"]
+[ext_resource type="PackedScene" uid="uid://b4qe87wqgx6a2" path="res://Entities/Player/player.tscn" id="3_j8job"]
+[ext_resource type="Script" uid="uid://qj537g1ftf6n" path="res://Scripts/Camera/character_camera.gd" id="4_3f78f"]
+[ext_resource type="PackedScene" uid="uid://carmr2ninxofu" path="res://UI/ui.tscn" id="5_k8do8"]
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("current_level")]
+y_sort_enabled = true
+script = ExtResource("1_j8job")
+current_level = NodePath("Labo")
+
+[node name="Labo" parent="." instance=ExtResource("2_k8do8")]
+
+[node name="CharacterCamera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("4_3f78f")
+metadata/_custom_type_script = "uid://qj537g1ftf6n"
+
+[node name="Player" parent="." instance=ExtResource("3_j8job")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(356.65347, 268.01743)
+
+[node name="UI" parent="." instance=ExtResource("5_k8do8")]

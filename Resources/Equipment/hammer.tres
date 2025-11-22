@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b561rk3texjv2"]
+
+[ext_resource type="Texture2D" uid="uid://dhmkr5tlcqqo" path="res://Resources/Assets/hammer.png" id="1_oyemk"]
+[ext_resource type="Script" uid="uid://dchjyc2j5gq4t" path="res://Scripts/Resources/item.gd" id="2_4bg2e"]
+
+[resource]
+script = ExtResource("2_4bg2e")
+name = "Hammer"
+plural_name = "Hammers"
+icon = ExtResource("1_oyemk")
+description = "Hammering some building"
+is_equipment = true
+metadata/_custom_type_script = "uid://dchjyc2j5gq4t"

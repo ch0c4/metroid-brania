@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv7k07wttvemg"]
+
+[ext_resource type="Texture2D" uid="uid://bem1jpuxvki63" path="res://UI/Assets/dt_box.png" id="1_auito"]
+[ext_resource type="Script" uid="uid://bifquiyh2dscv" path="res://UI/Scripts/inventory_slot_ui.gd" id="2_ek0kj"]
+[ext_resource type="FontFile" uid="uid://5odejrwp5if4" path="res://UI/Assets/nes_cyrillic.ttf" id="2_uka0g"]
+
+[node name="InventorySlotUI" type="NinePatchRect"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_auito")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+script = ExtResource("2_ek0kj")
+
+[node name="InventoryTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AmountLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_uka0g")
+theme_override_font_sizes/font_size = 18
+text = "2"

@@ -1,0 +1,1055 @@
+[gd_scene load_steps=66 format=3 uid="uid://b4qe87wqgx6a2"]
+
+[ext_resource type="Script" uid="uid://cdo818vqci1kl" path="res://Entities/Player/Scripts/player.gd" id="1_01a4e"]
+[ext_resource type="PackedScene" uid="uid://dbk2gtc8uh3rd" path="res://Entities/Player/body.tscn" id="1_tekja"]
+[ext_resource type="Texture2D" uid="uid://d1pb7lrut0dku" path="res://Entities/Player/Assets/IDLE/base_idle_strip9.png" id="2_5c2io"]
+[ext_resource type="Script" uid="uid://bnb3aorwfbb00" path="res://Scripts/CharacterSystems/stats.gd" id="2_r8fok"]
+[ext_resource type="Script" uid="uid://bnis5w6f517dy" path="res://Scripts/CharacterSystems/movement_stats.gd" id="3_nhbkt"]
+[ext_resource type="Texture2D" uid="uid://bbdyfavk5x3ge" path="res://Entities/Player/Assets/IDLE/longhair_idle_strip9.png" id="3_tekja"]
+[ext_resource type="Texture2D" uid="uid://xx7tq76ly025" path="res://Entities/Player/Assets/IDLE/tools_idle_strip9.png" id="4_01a4e"]
+[ext_resource type="Script" uid="uid://dg06iunimdenk" path="res://Scripts/DamageBoxes/hurtbox.gd" id="5_5c2io"]
+[ext_resource type="Script" uid="uid://bdbl6wsbovfqf" path="res://Scripts/DamageBoxes/hitbox.gd" id="6_dv6dp"]
+[ext_resource type="Script" uid="uid://c7vhsns5gca8s" path="res://Scripts/StateMachine/state_machine.gd" id="7_7a1se"]
+[ext_resource type="Texture2D" uid="uid://dkxcys3ng0dry" path="res://Entities/Player/Assets/WALKING/base_walk_strip8.png" id="7_x1y6q"]
+[ext_resource type="Texture2D" uid="uid://dew8kviyhdj2p" path="res://Entities/Player/Assets/WALKING/longhair_walk_strip8.png" id="8_ap3xn"]
+[ext_resource type="Script" uid="uid://bb6m2jou5mf41" path="res://Entities/Player/Scripts/player_interaction_detector.gd" id="9_1ii4q"]
+[ext_resource type="Texture2D" uid="uid://me62nf5ngasx" path="res://Entities/Player/Assets/WALKING/tools_walk_strip8.png" id="9_iplt1"]
+[ext_resource type="PackedScene" uid="uid://bl0icn7p5oc7a" path="res://UI/Life/lifebar.tscn" id="10_520x1"]
+[ext_resource type="Texture2D" uid="uid://60kmp35wwocf" path="res://Entities/Player/Assets/RUN/base_run_strip8.png" id="10_owvpp"]
+[ext_resource type="Texture2D" uid="uid://ck1t4u0pu51ls" path="res://Entities/Player/Assets/RUN/longhair_run_strip8.png" id="11_xr8lj"]
+[ext_resource type="Texture2D" uid="uid://5cacv3rcr706" path="res://Entities/Player/Assets/RUN/tools_run_strip8.png" id="12_r8fok"]
+[ext_resource type="Texture2D" uid="uid://c2erjleegw3te" path="res://Entities/Player/Assets/ROLL/base_roll_strip10.png" id="13_a8wow"]
+[ext_resource type="Texture2D" uid="uid://b0eruuws7ff8o" path="res://Entities/Player/Assets/ROLL/longhair_roll_strip10.png" id="14_avsg8"]
+[ext_resource type="Texture2D" uid="uid://cpx6vjbg3v7mo" path="res://Entities/Player/Assets/ROLL/tools_roll_strip10.png" id="15_dv6dp"]
+[ext_resource type="Texture2D" uid="uid://5236ymqgdusd" path="res://Entities/Player/Assets/ATTACK/base_attack_strip10.png" id="16_01ng6"]
+[ext_resource type="Script" uid="uid://ch5u8xujpruxs" path="res://Entities/Player/Scripts/States/player_run_state.gd" id="16_nhbkt"]
+[ext_resource type="Texture2D" uid="uid://1756ivaxw43c" path="res://Entities/Player/Assets/ATTACK/longhair_attack_strip10.png" id="17_ui1ln"]
+[ext_resource type="Texture2D" uid="uid://il2dwyjk2j0w" path="res://Entities/Player/Assets/ATTACK/tools_attack_strip10.png" id="18_og23y"]
+[ext_resource type="Script" uid="uid://b735unstc5em" path="res://Entities/Player/Scripts/player_input_component.gd" id="22_80ryp"]
+[ext_resource type="Script" uid="uid://tupy3cuvimuq" path="res://Entities/Player/Scripts/States/player_roll_state.gd" id="23_avsg8"]
+[ext_resource type="Texture2D" uid="uid://6v85rcqvarva" path="res://Entities/Player/Assets/AXE/base_axe_strip10.png" id="24_slvv8"]
+[ext_resource type="Script" uid="uid://bu8pu6fr1w3og" path="res://Entities/Player/Scripts/States/player_attack_state.gd" id="25_01ng6"]
+[ext_resource type="Texture2D" uid="uid://c7dqxby6la6vp" path="res://Entities/Player/Assets/AXE/longhair_axe_strip10.png" id="25_l3oqu"]
+[ext_resource type="Texture2D" uid="uid://cqh6jgboorlxy" path="res://Entities/Player/Assets/AXE/tools_axe_strip10.png" id="26_53w1c"]
+[ext_resource type="Texture2D" uid="uid://ccftcyxeonv7q" path="res://Entities/Player/Assets/MINING/base_mining_strip10.png" id="27_c0fwy"]
+[ext_resource type="Texture2D" uid="uid://d1hckyik5pc84" path="res://Entities/Player/Assets/MINING/longhair_mining_strip10.png" id="28_fe32i"]
+[ext_resource type="Texture2D" uid="uid://bwgctvn0aiafo" path="res://Entities/Player/Assets/MINING/tools_mining_strip10.png" id="29_rkx17"]
+[ext_resource type="Texture2D" uid="uid://bpc1xpoq7pm1j" path="res://Entities/Player/Assets/DIG/base_dig_strip13.png" id="30_gds62"]
+[ext_resource type="Script" uid="uid://cvjeuxgma52sh" path="res://Entities/Player/Scripts/States/player_chop_state.gd" id="30_v27kq"]
+[ext_resource type="Texture2D" uid="uid://du8ev4n80g0dy" path="res://Entities/Player/Assets/DIG/longhair_dig_strip13.png" id="31_qv8uv"]
+[ext_resource type="Script" uid="uid://dudvrfh4mcfvf" path="res://Scripts/Components/flip_component.gd" id="31_slvv8"]
+[ext_resource type="Texture2D" uid="uid://cj4pulqj31u7t" path="res://Entities/Player/Assets/DIG/tools_dig_strip13.png" id="32_1ii4q"]
+[ext_resource type="Script" uid="uid://bhrp01c35qdle" path="res://Entities/Player/Scripts/States/player_idle_state.gd" id="32_w51ui"]
+[ext_resource type="Script" uid="uid://c44v81va8t2u" path="res://Entities/Player/Scripts/States/player_mine_state.gd" id="34_53w1c"]
+[ext_resource type="Script" uid="uid://bx487gijegau2" path="res://Entities/Player/Scripts/States/player_walking_state.gd" id="34_l3oqu"]
+[ext_resource type="Texture2D" uid="uid://b0iqg6nrnkuqx" path="res://Entities/Player/Assets/HURT/base_hurt_strip8.png" id="35_23o0h"]
+[ext_resource type="Texture2D" uid="uid://bp1a5e6uea83n" path="res://Entities/Player/Assets/HURT/longhair_hurt_strip8.png" id="36_pagiw"]
+[ext_resource type="Texture2D" uid="uid://mf1m54epkjxp" path="res://Entities/Player/Assets/HURT/tools_hurt_strip8.png" id="37_fyltw"]
+[ext_resource type="Script" uid="uid://byvlpvf7jdsos" path="res://Entities/Player/Scripts/States/player_dig_state.gd" id="41_qv8uv"]
+[ext_resource type="Script" uid="uid://c4ojujaj07cyc" path="res://Entities/Player/Scripts/States/player_hurt_state.gd" id="47_1birn"]
+
+[sub_resource type="Resource" id="Resource_vskfa"]
+script = ExtResource("2_r8fok")
+metadata/_custom_type_script = "uid://bnb3aorwfbb00"
+
+[sub_resource type="Resource" id="Resource_pjcup"]
+script = ExtResource("3_nhbkt")
+metadata/_custom_type_script = "uid://bnis5w6f517dy"
+
+[sub_resource type="Resource" id="Resource_nhbkt"]
+script = ExtResource("3_nhbkt")
+max_speed = 140.0
+acceleration = 2000.0
+friction = 1200.0
+metadata/_custom_type_script = "uid://bnis5w6f517dy"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tekja"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4wf4l"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dv6dp"]
+radius = 8.062258
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ii4q"]
+radius = 15.033297
+
+[sub_resource type="Animation" id="Animation_ap3xn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_5c2io")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_tekja")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_01a4e")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hitbox:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hurtbox:is_invincible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_01ng6"]
+resource_name = "attack"
+length = 0.66667336
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_01ng6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_ui1ln")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("18_og23y")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53333336, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hitbox:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_v27kq"]
+resource_name = "axe"
+length = 0.66667336
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("24_slvv8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("25_l3oqu")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("26_53w1c")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53333336, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hitbox:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_520x1"]
+resource_name = "dig"
+length = 0.86667335
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("30_gds62")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("31_qv8uv")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("32_1ii4q")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53333336, 0.6, 0.6666667, 0.73333335, 0.8000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hitbox:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.13333336, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_58aja"]
+resource_name = "hurt"
+length = 0.53334004
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("35_23o0h")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("36_pagiw")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("37_fyltw")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_x1y6q"]
+resource_name = "idle"
+length = 0.6000067
+loop_mode = 1
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_5c2io")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_tekja")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_01a4e")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_gds62"]
+resource_name = "mining"
+length = 0.66667336
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("27_c0fwy")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("28_fe32i")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("29_rkx17")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53333336, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hitbox:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_a8wow"]
+resource_name = "roll"
+length = 0.66667336
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_a8wow")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_avsg8")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_dv6dp")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53333336, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hurtbox:is_invincible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_0poeq"]
+resource_name = "run"
+length = 0.53334004
+loop_mode = 1
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_owvpp")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_xr8lj")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_r8fok")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_owvpp"]
+resource_name = "walking"
+length = 0.53334004
+loop_mode = 1
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:base_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_x1y6q")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:hair_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_ap3xn")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:tool_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_iplt1")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iplt1"]
+_data = {
+&"RESET": SubResource("Animation_ap3xn"),
+&"attack": SubResource("Animation_01ng6"),
+&"axe": SubResource("Animation_v27kq"),
+&"dig": SubResource("Animation_520x1"),
+&"hurt": SubResource("Animation_58aja"),
+&"idle": SubResource("Animation_x1y6q"),
+&"mining": SubResource("Animation_gds62"),
+&"roll": SubResource("Animation_a8wow"),
+&"run": SubResource("Animation_0poeq"),
+&"walking": SubResource("Animation_owvpp")
+}
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_01a4e")
+stats = SubResource("Resource_vskfa")
+movement_stats = SubResource("Resource_pjcup")
+sprint_movement_stats = SubResource("Resource_nhbkt")
+
+[node name="RemoteCamera" type="RemoteTransform2D" parent="."]
+
+[node name="PlayerInputComponent" type="Node" parent="." node_paths=PackedStringArray("state_machine", "interaction_detector")]
+script = ExtResource("22_80ryp")
+state_machine = NodePath("../StateMachine")
+interaction_detector = NodePath("../InteractionDetector")
+
+[node name="FlipComponent" type="Node" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("31_slvv8")
+character = NodePath("..")
+
+[node name="Body" parent="." instance=ExtResource("1_tekja")]
+
+[node name="FloorCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tekja")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("5_5c2io")
+metadata/_custom_type_script = "uid://dg06iunimdenk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_4wf4l")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+monitoring = false
+script = ExtResource("6_dv6dp")
+knockback_amount = 200.0
+metadata/_custom_type_script = "uid://bdbl6wsbovfqf"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(12, 0)
+shape = SubResource("CircleShape2D_dv6dp")
+
+[node name="InteractionDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("9_1ii4q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetector"]
+shape = SubResource("CircleShape2D_1ii4q")
+
+[node name="Lifebar" parent="." instance=ExtResource("10_520x1")]
+offset_left = -7.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iplt1")
+}
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("7_7a1se")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://c7vhsns5gca8s"
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("32_w51ui")
+animation_player = NodePath("../../AnimationPlayer")
+
+[node name="Walking" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("34_l3oqu")
+animation_player = NodePath("../../AnimationPlayer")
+
+[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("16_nhbkt")
+animation_player = NodePath("../../AnimationPlayer")
+
+[node name="Roll" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hurtbox")]
+script = ExtResource("23_avsg8")
+animation_player = NodePath("../../AnimationPlayer")
+hurtbox = NodePath("../../Hurtbox")
+
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hitbox")]
+script = ExtResource("25_01ng6")
+animation_player = NodePath("../../AnimationPlayer")
+hitbox = NodePath("../../Hitbox")
+
+[node name="Chop" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("30_v27kq")
+animation_player = NodePath("../../AnimationPlayer")
+
+[node name="Mine" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("34_53w1c")
+animation_player = NodePath("../../AnimationPlayer")
+
+[node name="Dig" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("41_qv8uv")
+animation_player = NodePath("../../AnimationPlayer")
+
+[node name="Hurt" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hurtbox")]
+script = ExtResource("47_1birn")
+animation_player = NodePath("../../AnimationPlayer")
+hurtbox = NodePath("../../Hurtbox")
