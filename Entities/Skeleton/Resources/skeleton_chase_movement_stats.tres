@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MovementStats" load_steps=2 format=3 uid="uid://0ops7k1gg6jw"]
+
+[ext_resource type="Script" uid="uid://bnis5w6f517dy" path="res://Scripts/CharacterSystems/movement_stats.gd" id="1_2qxou"]
+
+[resource]
+script = ExtResource("1_2qxou")
+max_speed = 50.0
+acceleration = 425.0
+metadata/_custom_type_script = "uid://bnis5w6f517dy"

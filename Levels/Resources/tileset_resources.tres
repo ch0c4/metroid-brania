@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://blt7oddgmuqd5"]
+
+[ext_resource type="PackedScene" uid="uid://exq7xrgvrqrt" path="res://Entities/Destroyable/Rocks/small_mine_rock.tscn" id="1_0g50m"]
+[ext_resource type="PackedScene" uid="uid://bm4x8i8i77wi" path="res://Entities/Destroyable/Trees/big_trees.tscn" id="2_hy5s1"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_sc35x"]
+resource_name = "Rocks"
+scenes/1/scene = ExtResource("1_0g50m")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6e38d"]
+resource_name = "Trees"
+scenes/1/scene = ExtResource("2_hy5s1")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_sc35x")
+sources/1 = SubResource("TileSetScenesCollectionSource_6e38d")
