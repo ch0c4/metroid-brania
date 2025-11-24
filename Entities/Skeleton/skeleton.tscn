@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bpvidll2a5f28"]
+[gd_scene load_steps=36 format=3 uid="uid://bpvidll2a5f28"]
 
 [ext_resource type="Texture2D" uid="uid://cdh46hm4gt2c0" path="res://Entities/Skeleton/Assets/skeleton_idle_strip6.png" id="1_0c21w"]
 [ext_resource type="Script" uid="uid://bltl13eh6h5q4" path="res://Entities/Skeleton/Scripts/skeleton.gd" id="1_t2wrk"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bx780vu5cnn6n" path="res://Entities/Skeleton/Assets/skeleton_death_strip10.png" id="7_05nsq"]
 [ext_resource type="Texture2D" uid="uid://bywt47xomynn2" path="res://Entities/Skeleton/Assets/skeleton_attack_strip7.png" id="8_hl3u6"]
 [ext_resource type="PackedScene" uid="uid://bl0icn7p5oc7a" path="res://UI/Life/lifebar.tscn" id="9_py23r"]
+[ext_resource type="FontFile" uid="uid://5odejrwp5if4" path="res://UI/Assets/nes_cyrillic.ttf" id="10_2m12x"]
+[ext_resource type="Script" uid="uid://djmaonkb4sisa" path="res://UI/Scripts/damage_label.gd" id="11_4o3bd"]
 [ext_resource type="Script" uid="uid://c7vhsns5gca8s" path="res://Scripts/StateMachine/state_machine.gd" id="12_lgyos"]
 [ext_resource type="Script" uid="uid://becmjoubg5g4d" path="res://Entities/Skeleton/Scripts/States/skeleton_waiting_state.gd" id="13_lgyos"]
 [ext_resource type="Script" uid="uid://b528crbswaj56" path="res://Entities/Skeleton/Scripts/States/skeleton_chase_state.gd" id="14_q877d"]
@@ -26,6 +28,9 @@ script = ExtResource("3_05fgp")
 max_health = 3.0
 metadata/_custom_type_script = "uid://bnb3aorwfbb00"
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hl3u6"]
+radius = 7.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hl3u6"]
 radius = 2.0
 height = 8.0
@@ -33,9 +38,6 @@ height = 8.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t2wrk"]
 radius = 7.0
 height = 18.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hl3u6"]
-radius = 7.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_py23r"]
 radius = 5.0
@@ -49,7 +51,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:texture")
+tracks/0/path = NodePath("Anchor/Body:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -61,7 +63,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body:hframes")
+tracks/1/path = NodePath("Anchor/Body:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -73,7 +75,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body:vframes")
+tracks/2/path = NodePath("Anchor/Body:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -85,7 +87,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body:frame")
+tracks/3/path = NodePath("Anchor/Body:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -97,7 +99,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("WeaponHitbox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Anchor/WeaponHitbox/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -114,7 +116,7 @@ step = 0.06666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:texture")
+tracks/0/path = NodePath("Anchor/Body:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -126,7 +128,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body:hframes")
+tracks/1/path = NodePath("Anchor/Body:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -138,7 +140,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body:vframes")
+tracks/2/path = NodePath("Anchor/Body:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -150,7 +152,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body:frame")
+tracks/3/path = NodePath("Anchor/Body:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -162,7 +164,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("WeaponHitbox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Anchor/WeaponHitbox/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -179,7 +181,7 @@ step = 0.06666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:texture")
+tracks/0/path = NodePath("Anchor/Body:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -191,7 +193,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body:hframes")
+tracks/1/path = NodePath("Anchor/Body:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -203,7 +205,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body:vframes")
+tracks/2/path = NodePath("Anchor/Body:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -215,7 +217,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body:frame")
+tracks/3/path = NodePath("Anchor/Body:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -246,7 +248,7 @@ step = 0.06666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:texture")
+tracks/0/path = NodePath("Anchor/Body:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -258,7 +260,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body:hframes")
+tracks/1/path = NodePath("Anchor/Body:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -270,7 +272,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body:vframes")
+tracks/2/path = NodePath("Anchor/Body:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -282,7 +284,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body:frame")
+tracks/3/path = NodePath("Anchor/Body:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -300,7 +302,7 @@ step = 0.06666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:texture")
+tracks/0/path = NodePath("Anchor/Body:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -312,7 +314,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body:hframes")
+tracks/1/path = NodePath("Anchor/Body:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -324,7 +326,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body:vframes")
+tracks/2/path = NodePath("Anchor/Body:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -336,7 +338,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body:frame")
+tracks/3/path = NodePath("Anchor/Body:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -354,7 +356,7 @@ step = 0.06666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:texture")
+tracks/0/path = NodePath("Anchor/Body:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -366,7 +368,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body:hframes")
+tracks/1/path = NodePath("Anchor/Body:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -378,7 +380,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body:vframes")
+tracks/2/path = NodePath("Anchor/Body:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -390,7 +392,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body:frame")
+tracks/3/path = NodePath("Anchor/Body:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -418,18 +420,32 @@ patrol_movement_stats = ExtResource("2_4fykn")
 chase_movement_stats = ExtResource("3_py23r")
 stats = SubResource("Resource_py23r")
 
-[node name="Body" type="Sprite2D" parent="."]
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="Anchor"]
 texture = ExtResource("1_0c21w")
 hframes = 6
+
+[node name="WeaponHitbox" type="Area2D" parent="Anchor"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("3_0c21w")
+knockback_amount = 175.0
+metadata/_custom_type_script = "uid://bdbl6wsbovfqf"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/WeaponHitbox"]
+position = Vector2(16, 0)
+shape = SubResource("CircleShape2D_hl3u6")
+disabled = true
 
 [node name="FloorCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_hl3u6")
 
-[node name="FlipComponent" type="Node" parent="." node_paths=PackedStringArray("character")]
+[node name="FlipComponent" type="Node" parent="." node_paths=PackedStringArray("anchor")]
 script = ExtResource("1_wlf70")
-character = NodePath("..")
+anchor = NodePath("../Anchor")
 metadata/_custom_type_script = "uid://dudvrfh4mcfvf"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
@@ -443,18 +459,6 @@ metadata/_custom_type_script = "uid://dg06iunimdenk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CapsuleShape2D_t2wrk")
-
-[node name="WeaponHitbox" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 8
-script = ExtResource("3_0c21w")
-knockback_amount = 175.0
-metadata/_custom_type_script = "uid://bdbl6wsbovfqf"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponHitbox"]
-position = Vector2(16, 0)
-shape = SubResource("CircleShape2D_hl3u6")
-disabled = true
 
 [node name="BodyHitbox" type="Area2D" parent="."]
 script = ExtResource("3_0c21w")
@@ -476,6 +480,18 @@ offset_top = -20.0
 offset_right = 7.0
 offset_bottom = -13.0
 character = NodePath("..")
+
+[node name="DamageLabel" type="Label" parent="."]
+z_index = 100
+offset_right = 50.0
+offset_bottom = 30.0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(25, 15)
+theme_override_fonts/font = ExtResource("10_2m12x")
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_4o3bd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -511,4 +527,4 @@ animation_player = NodePath("../../AnimationPlayer")
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hitbox")]
 script = ExtResource("18_4fykn")
 animation_player = NodePath("../../AnimationPlayer")
-hitbox = NodePath("../../WeaponHitbox")
+hitbox = NodePath("../../Anchor/WeaponHitbox")

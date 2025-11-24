@@ -19,7 +19,6 @@ var facing_direction := Vector2.RIGHT:
 		
 		if abs(value.x) >= abs(value.y) - 0.1:
 			value = Vector2(sign(value.x), 0)
-			
 		else:
 			value = Vector2(0, sin(value.y))
 		
