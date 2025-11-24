@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxjqm3vcvv7j"]
 
 [ext_resource type="FontFile" uid="uid://5odejrwp5if4" path="res://UI/Assets/nes_cyrillic.ttf" id="1_r4mdk"]
-[ext_resource type="Script" uid="uid://c3s46ot7e8yog" path="res://UI/Scripts/player_inventory_manager.gd" id="1_vsrpy"]
+[ext_resource type="Script" uid="uid://c3s46ot7e8yog" path="res://UI/Inventory/Scripts/player_inventory_manager.gd" id="1_vsrpy"]
 [ext_resource type="PackedScene" uid="uid://b0if0phdtlh6g" path="res://UI/Inventory/inventory_ui.tscn" id="2_hw7td"]
 
 [node name="PlayerInventoryManager" type="VBoxContainer"]
