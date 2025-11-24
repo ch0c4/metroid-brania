@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bpvidll2a5f28"]
+[gd_scene load_steps=35 format=3 uid="uid://bpvidll2a5f28"]
 
 [ext_resource type="Texture2D" uid="uid://cdh46hm4gt2c0" path="res://Entities/Skeleton/Assets/skeleton_idle_strip6.png" id="1_0c21w"]
 [ext_resource type="Script" uid="uid://bltl13eh6h5q4" path="res://Entities/Skeleton/Scripts/skeleton.gd" id="1_t2wrk"]
@@ -13,8 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bx780vu5cnn6n" path="res://Entities/Skeleton/Assets/skeleton_death_strip10.png" id="7_05nsq"]
 [ext_resource type="Texture2D" uid="uid://bywt47xomynn2" path="res://Entities/Skeleton/Assets/skeleton_attack_strip7.png" id="8_hl3u6"]
 [ext_resource type="PackedScene" uid="uid://bl0icn7p5oc7a" path="res://UI/Life/lifebar.tscn" id="9_py23r"]
-[ext_resource type="FontFile" uid="uid://5odejrwp5if4" path="res://UI/Assets/nes_cyrillic.ttf" id="10_2m12x"]
-[ext_resource type="Script" uid="uid://djmaonkb4sisa" path="res://UI/Scripts/damage_label.gd" id="11_4o3bd"]
+[ext_resource type="PackedScene" uid="uid://bdcsvmm08ktf7" path="res://UI/DamageLabel/damage_label.tscn" id="10_2m12x"]
 [ext_resource type="Script" uid="uid://c7vhsns5gca8s" path="res://Scripts/StateMachine/state_machine.gd" id="12_lgyos"]
 [ext_resource type="Script" uid="uid://becmjoubg5g4d" path="res://Entities/Skeleton/Scripts/States/skeleton_waiting_state.gd" id="13_lgyos"]
 [ext_resource type="Script" uid="uid://b528crbswaj56" path="res://Entities/Skeleton/Scripts/States/skeleton_chase_state.gd" id="14_q877d"]
@@ -481,17 +480,7 @@ offset_right = 7.0
 offset_bottom = -13.0
 character = NodePath("..")
 
-[node name="DamageLabel" type="Label" parent="."]
-z_index = 100
-offset_right = 50.0
-offset_bottom = 30.0
-scale = Vector2(0.4, 0.4)
-pivot_offset = Vector2(25, 15)
-theme_override_fonts/font = ExtResource("10_2m12x")
-text = "999"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("11_4o3bd")
+[node name="DamageLabel" parent="." instance=ExtResource("10_2m12x")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
