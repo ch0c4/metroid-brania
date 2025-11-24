@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdcsvmm08ktf7"]
+
+[ext_resource type="FontFile" uid="uid://5odejrwp5if4" path="res://UI/Assets/nes_cyrillic.ttf" id="1_3wjkl"]
+[ext_resource type="Script" uid="uid://djmaonkb4sisa" path="res://UI/DamageLabel/Scripts/damage_label.gd" id="2_w2u3d"]
+
+[node name="DamageLabel" type="Label"]
+z_index = 100
+offset_right = 50.0
+offset_bottom = 30.0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(25, 15)
+theme_override_fonts/font = ExtResource("1_3wjkl")
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_w2u3d")
