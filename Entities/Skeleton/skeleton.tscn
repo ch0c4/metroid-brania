@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bpvidll2a5f28"]
+[gd_scene load_steps=34 format=3 uid="uid://bpvidll2a5f28"]
 
 [ext_resource type="Texture2D" uid="uid://cdh46hm4gt2c0" path="res://Entities/Skeleton/Assets/skeleton_idle_strip6.png" id="1_0c21w"]
 [ext_resource type="Script" uid="uid://bltl13eh6h5q4" path="res://Entities/Skeleton/Scripts/skeleton.gd" id="1_t2wrk"]
@@ -36,6 +36,10 @@ height = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hl3u6"]
 radius = 7.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_py23r"]
+radius = 5.0
+height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vrfyq"]
 radius = 63.07139
@@ -93,7 +97,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("WeaponHitbox/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -158,7 +162,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("WeaponHitbox/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -440,17 +444,24 @@ metadata/_custom_type_script = "uid://dg06iunimdenk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CapsuleShape2D_t2wrk")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="WeaponHitbox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("3_0c21w")
 knockback_amount = 175.0
 metadata/_custom_type_script = "uid://bdbl6wsbovfqf"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponHitbox"]
 position = Vector2(16, 0)
 shape = SubResource("CircleShape2D_hl3u6")
 disabled = true
+
+[node name="BodyHitbox" type="Area2D" parent="."]
+script = ExtResource("3_0c21w")
+metadata/_custom_type_script = "uid://bdbl6wsbovfqf"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyHitbox"]
+shape = SubResource("CapsuleShape2D_py23r")
 
 [node name="PlayerDetector" type="Area2D" parent="."]
 collision_layer = 0
@@ -500,4 +511,4 @@ animation_player = NodePath("../../AnimationPlayer")
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_player", "hitbox")]
 script = ExtResource("18_4fykn")
 animation_player = NodePath("../../AnimationPlayer")
-hitbox = NodePath("../../Hitbox")
+hitbox = NodePath("../../WeaponHitbox")
