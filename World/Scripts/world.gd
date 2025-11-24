@@ -8,6 +8,7 @@ class_name World extends Node2D
 func _ready() -> void:
 	RenderingServer.set_default_clear_color(Color("#14182e"))
 	Events.door_entered.connect(change_levels, CONNECT_DEFERRED)
+	y_sort_enabled = true
 
 
 func set_level(level_scene_path: String) -> void:
