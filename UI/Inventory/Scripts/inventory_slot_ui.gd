@@ -11,7 +11,8 @@ signal selected(inventory_slot_ui: InventorySlotUi, event: InputEvent)
 			return
 		item_box.item_changed.connect(update_item)
 		item_box.amount_changed.connect(update_label_amount)
-		
+
+	
 func _ready() -> void:
 	update_item()
 

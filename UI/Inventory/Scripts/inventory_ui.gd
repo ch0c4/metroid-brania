@@ -1,6 +1,6 @@
 class_name InventoryUi extends GridContainer
 
-const INVENTORY_SLOT_UI: PackedScene = preload("res://UI/inventory_slot_ui.tscn")
+const INVENTORY_SLOT_UI: PackedScene = preload("res://UI/Inventory/inventory_slot_ui.tscn")
 
 signal inventory_slot_selected(inventory_ui: InventoryUi, slot: InventorySlotUi, event: InputEvent)
 
