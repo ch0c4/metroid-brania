@@ -5,6 +5,7 @@ class_name Skeleton extends CharacterBody2D
 @export var stats: Stats
 
 @onready var hurtbox: Hurtbox = $Hurtbox
+@onready var body_hitbox: Hitbox = $BodyHitbox
 @onready var player_detector: Area2D = $PlayerDetector
 @onready var state_machine: StateMachine = $StateMachine
 
@@ -22,6 +23,7 @@ var facing_direction := Vector2.RIGHT:
 		else:
 			value = Vector2(0, sin(value.y))
 		
+		body_hitbox.knockback = value * body_hitbox.knockback_amount
 		facing_direction = value
 
 
