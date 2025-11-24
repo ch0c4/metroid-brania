@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0xcpy1mtdom8"]
+
+[ext_resource type="Script" uid="uid://cd2bsi105hgdy" path="res://Entities/AOE/Scripts/aoe.gd" id="1_l338n"]
+[ext_resource type="Script" uid="uid://bdbl6wsbovfqf" path="res://Scripts/DamageBoxes/hitbox.gd" id="2_22ack"]
+
+[node name="AOE" type="Node2D"]
+script = ExtResource("1_l338n")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("2_22ack")
+metadata/_custom_type_script = "uid://bdbl6wsbovfqf"

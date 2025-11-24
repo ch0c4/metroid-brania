@@ -1,0 +1,97 @@
+[gd_scene load_steps=15 format=3 uid="uid://bupnvn4ql6hjm"]
+
+[ext_resource type="PackedScene" uid="uid://c0xcpy1mtdom8" path="res://Entities/AOE/aoe.tscn" id="1_k8hn7"]
+[ext_resource type="Texture2D" uid="uid://coqtio7well86" path="res://Entities/AOE/Assets/Elemental/RockSpike/SpriteSheet.png" id="2_1qq1m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjp6f"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(0, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur1bo"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(54, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohs88"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(108, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iewru"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(162, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bns02"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(216, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xkgc"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(270, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5ccf"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(324, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxd88"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(378, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55gdb"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(432, 0, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e2ia"]
+atlas = ExtResource("2_1qq1m")
+region = Rect2(486, 0, 54, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e4dwc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjp6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur1bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohs88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iewru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bns02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xkgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5ccf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxd88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55gdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e2ia")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1qq1m"]
+radius = 32.24903
+
+[node name="RockSpikeAOE" instance=ExtResource("1_k8hn7")]
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_e4dwc")
+autoplay = "default"
+
+[node name="Hitbox" parent="." index="1"]
+knockback_amount = 400.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_1qq1m")
