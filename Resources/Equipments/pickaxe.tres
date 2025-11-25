@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bbm28wd464sbi"]
+
+[ext_resource type="Texture2D" uid="uid://11bspclfo1kn" path="res://Resources/Equipments/Assets/pickaxe.png" id="1_37nu5"]
+[ext_resource type="Script" uid="uid://dchjyc2j5gq4t" path="res://Scripts/Resources/item.gd" id="2_brqha"]
+
+[resource]
+script = ExtResource("2_brqha")
+name = "Pickaxe"
+plural_name = "Pickaxes"
+icon = ExtResource("1_37nu5")
+description = "Mine some rock"
+is_equipment = true
+metadata/_custom_type_script = "uid://dchjyc2j5gq4t"

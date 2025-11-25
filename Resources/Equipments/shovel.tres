@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://7osm2kuksyt7"]
+
+[ext_resource type="Texture2D" uid="uid://dx3iq5otj1t3i" path="res://Resources/Equipments/Assets/shovel.png" id="1_chs34"]
+[ext_resource type="Script" uid="uid://dchjyc2j5gq4t" path="res://Scripts/Resources/item.gd" id="2_if7j4"]
+
+[resource]
+script = ExtResource("2_if7j4")
+name = "Shovel"
+plural_name = "Shovels"
+icon = ExtResource("1_chs34")
+description = "Diggy diggy hole"
+is_equipment = true
+metadata/_custom_type_script = "uid://dchjyc2j5gq4t"

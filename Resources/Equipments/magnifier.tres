@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cmmc15tf6gv00"]
+
+[ext_resource type="Texture2D" uid="uid://ubhjsuvda8ud" path="res://Resources/Equipments/Assets/search.png" id="1_q3utk"]
+[ext_resource type="Script" uid="uid://dchjyc2j5gq4t" path="res://Scripts/Resources/item.gd" id="2_7h4ak"]
+
+[resource]
+script = ExtResource("2_7h4ak")
+name = "Magnifier"
+plural_name = "Magnifiers"
+icon = ExtResource("1_q3utk")
+description = "You search something ?"
+is_equipment = true
+metadata/_custom_type_script = "uid://dchjyc2j5gq4t"
