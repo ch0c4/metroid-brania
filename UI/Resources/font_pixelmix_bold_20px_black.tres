@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b7i0hjiagkp0t"]
+
+[ext_resource type="FontFile" uid="uid://ctfx04r3t8111" path="res://UI/Assets/pixelmix_bold.ttf" id="1_xik7f"]
+
+[resource]
+font = ExtResource("1_xik7f")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
